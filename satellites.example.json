@@ -1,0 +1,4 @@
+[
+  {"id": "kitchen-pi", "name": "Kitchen", "room": "Kitchen", "token_file": ".secrets/kitchen-token.txt"},
+  {"id": "office-pi", "name": "Office", "room": "Office", "token_file": ".secrets/office-token.txt"}
+]

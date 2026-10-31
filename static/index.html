@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>HomeSense · Gemma 4</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" type="module"></script>
+</head>
+<body>
+  <main>
+    <header><a class="brand" href="/">⌂ <span>HomeSense</span></a><span class="local" id="speech-badge">● Loading settings</span></header>
+    <section class="intro"><div><p class="eyebrow">YOUR HOME. YOUR VOICE.</p><h1>Your home listens.<br><span>You decide.</span></h1><p>Control devices by voice or text.<br>See every command and its result.</p></div><div class="mode"><span id="mode-dot" class="dot"></span><div><strong id="mode">Connecting…</strong><p id="mode-description">Loading application settings.</p></div></div></section>
+    <div class="columns">
+      <section class="panel control"><div class="section-title"><h2>Send a command</h2><span>01 / CONTROL</span></div>
+<p id="speech-note" class="quiet" role="status">Gemma 4 interprets commands in Google’s cloud.</p>
+        <button id="record" class="record" disabled aria-pressed="false"><span class="mic" aria-hidden="true">◉</span><strong id="record-label">Start voice command</strong><span id="record-hint">Up to 8 seconds · click again to stop</span></button>
+        <div class="meter" role="meter" aria-label="Microphone level" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><progress id="volume" max="100" value="0"></progress></div>
+        <p id="record-time" class="quiet">Microphone is off.</p>
+        <div class="divider"><span>or type</span></div>
+        <form id="command-form"><label for="command">Text command</label><div class="input-row"><input id="command" name="command" placeholder="Type a Finnish command…" maxlength="300" required autocomplete="off"><button id="send" type="submit" disabled>Send ↗</button></div></form>
+        <div class="examples"><span>Try:</span><button type="button" data-example="Sytytä keittiön valo">Turn on kitchen light</button><button type="button" data-example="Sammuta työhuoneen rele">Turn off office relay</button></div>
+      </section>
+      <section class="panel"><div class="section-title"><h2>Command progress</h2><span>02 / FEEDBACK</span></div>
+        <ol id="pipeline" class="pipeline"><li data-step="input"><span class="step-number">1</span><div><strong>Input</strong><p>Voice or text command</p></div><span class="step-state">Waiting</span></li><li data-step="speech"><span class="step-number">2</span><div><strong id="speech-label">Gemma 4 interpretation</strong><p id="speech-location">Loading settings</p></div><span class="step-state">Waiting</span></li><li data-step="rules"><span class="step-number">3</span><div><strong>Device validation</strong><p>Checks the allowed device and action</p></div><span class="step-state">Waiting</span></li><li data-step="device"><span class="step-number">4</span><div><strong id="device-stage">Device control</strong><p id="device-stage-hint">Simulation or Home Assistant</p></div><span class="step-state">Waiting</span></li></ol>
+        <div id="feedback" class="feedback" role="status" aria-live="polite"><strong id="feedback-title">Ready for a command</strong><p id="feedback-message">Gemma 4 interprets voice and text commands.</p></div>
+        <div class="spoken-controls"><label><input id="spoken-feedback" type="checkbox" checked> Spoken feedback</label><button id="replay-feedback" type="button" class="text-button">Replay feedback</button></div><p id="spoken-note" class="quiet" role="status">Spoken feedback is on. Available voices depend on your browser.</p>
+        <div class="transcript"><span>RECOGNIZED / TYPED</span><p id="transcript">—</p></div>
+      </section>
+    </div>
+    <section class="panel devices-panel"><div class="section-title"><h2>Home devices</h2><span id="device-count">03 / DEVICES</span></div><p id="device-note" class="quiet">Devices are loaded from the local allowlist.</p><div id="devices" class="devices"></div></section>
+    <section class="panel history-panel"><div class="section-title"><h2>Session history</h2><button id="clear-history" type="button" class="text-button">Clear</button></div><ol id="history" class="history"><li class="quiet" id="empty-history">No events yet.</li></ol></section>
+    <footer id="privacy-note">Loading speech service information.</footer>
+  </main>
+</body>
+</html>

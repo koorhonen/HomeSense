@@ -1,0 +1,8 @@
+.env
+__pycache__/
+*.pyc
+.tools/
+.venv/
+.secrets/
+satellite/.env
+satellite/models/

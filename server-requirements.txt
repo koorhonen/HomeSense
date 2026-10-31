@@ -1,0 +1,3 @@
+# Only required for the satellite HTTPS endpoint, not browser-only mode.
+uvicorn>=0.30,<1
+cryptography>=43

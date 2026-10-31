@@ -1,0 +1,21 @@
+[
+  {
+    "entity_id": "light.keittio",
+    "name": "Kitchen light",
+    "aliases": [
+      "keittiön valo",
+      "keittiön valot",
+      "keittiövalo"
+    ],
+    "room": "Kitchen"
+  },
+  {
+    "entity_id": "switch.tyohuone_rele",
+    "name": "Office relay",
+    "aliases": [
+      "työhuoneen rele",
+      "työhuoneen kytkin"
+    ],
+    "room": "Office"
+  }
+]

@@ -1,0 +1,24 @@
+[Unit]
+Description=HomeSense wake word satellite
+After=network-online.target sound.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# Replace the account and paths with your Raspberry Pi installation settings.
+User=pi
+SupplementaryGroups=audio
+WorkingDirectory=/home/pi/HomeSense
+ExecStart=/home/pi/HomeSense/.venv/bin/python -m satellite.client
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+UMask=0077
+StandardOutput=null
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
